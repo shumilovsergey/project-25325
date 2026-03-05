@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lavka Architektora</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav">
+    <a href="#hero" class="nav-logo">LA</a>
+    <div class="nav-links">
+      <a href="#photos">Фотографии</a>
+      <a href="#projects">Проекты</a>
+      <a href="#contacts">Контакты</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" id="hero">
+    <!-- floating background photo blocks -->
+    <div class="bg-photos">
+      <div class="bg-photo bp-1"></div>
+      <div class="bg-photo bp-2"></div>
+      <div class="bg-photo bp-3"></div>
+      <div class="bg-photo bp-4"></div>
+      <div class="bg-photo bp-5"></div>
+    </div>
+
+    <div class="hero-content">
+      <div class="hero-left">
+        <div class="hero-portrait">
+          <img src="content/me.jpg" alt="Надеждин Илья Евгеньевич" class="portrait-img" />
+        </div>
+        <div class="hero-text">
+          <h1 class="hero-title">LAVKA<br>ARCHITEKTORA</h1>
+          <p class="hero-role">Архитектор</p>
+          <h2 class="hero-name">Надеждин Илья Евгеньевич</h2>
+          <div class="hero-resume">
+            <p class="resume-label">Резюме:</p>
+            <p>Образование: Закончил СПбГАСУ по специальности архитектура 1994–2000г</p>
+            <p>Работаю в области деревянного домостроения с 1998 года</p>
+            <p>Спроектировал более 450 домов из них 270 домов построено</p>
+            <p>С 2008 по 2026 год работаю с компанией Хонка</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-blueprint">
+        <svg viewBox="0 0 700 460" xmlns="http://www.w3.org/2000/svg" class="blueprint-svg">
+          <defs>
+            <pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse">
+              <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#c8a96e" stroke-width="0.18" opacity="0.2"/>
+            </pattern>
+          </defs>
+          <rect width="700" height="460" fill="url(#grid)"/>
+
+          <!-- ══ SINGLE L-SHAPED HOUSE PLAN ══════════════════ -->
+
+          <!-- ── OUTER WALLS (L-shape polygon) ── -->
+          <!-- Main wing: x30 y40 → x660 y40 → x660 y390 → x420 y390 → x420 y420 → x30 y420 -->
+          <!-- Left wing bottom drops lower; right wing is shorter -->
+          <polygon
+            points="30,30 660,30 660,360 500,360 500,420 30,420"
+            fill="none" stroke="#c8a96e" stroke-width="3" opacity="0.9"/>
+          <!-- inner offset for double-wall look -->
+          <polygon
+            points="34,34 656,34 656,356 496,356 496,416 34,416"
+            fill="none" stroke="#c8a96e" stroke-width="0.5" opacity="0.25"/>
+
+          <!-- ── TERRACE (protruding down from bottom-left) ── -->
+          <rect x="80" y="420" width="220" height="28" fill="none" stroke="#c8a96e" stroke-width="1.2" opacity="0.65"/>
+          <rect x="92" y="448" width="196" height="8"  fill="none" stroke="#c8a96e" stroke-width="0.7" opacity="0.45"/>
+          <rect x="104" y="456" width="172" height="7" fill="none" stroke="#c8a96e" stroke-width="0.7" opacity="0.45"/>
+
+          <!-- ── GARAGE WING (right side, extends right) ── -->
+          <rect x="500" y="100" width="120" height="200" fill="none" stroke="#c8a96e" stroke-width="1.8" opacity="0.7"/>
+          <rect x="504" y="104" width="112" height="192" fill="none" stroke="#c8a96e" stroke-width="0.5" opacity="0.2"/>
+          <!-- garage door (bottom) -->
+          <line x1="520" y1="300" x2="600" y2="300" stroke="#c8a96e" stroke-width="3.5" opacity="0.9"/>
+          <!-- garage door panels -->
+          <line x1="520" y1="284" x2="600" y2="284" stroke="#c8a96e" stroke-width="0.6" opacity="0.35"/>
+          <line x1="520" y1="268" x2="600" y2="268" stroke="#c8a96e" stroke-width="0.6" opacity="0.35"/>
+          <line x1="520" y1="252" x2="600" y2="252" stroke="#c8a96e" stroke-width="0.6" opacity="0.35"/>
+
+          <!-- ── INTERIOR WALLS ── -->
+          <!-- hall / living vertical -->
+          <line x1="180" y1="30"  x2="180" y2="420" stroke="#c8a96e" stroke-width="1.6" opacity="0.7"/>
+          <!-- living / dining horizontal -->
+          <line x1="180" y1="230" x2="500" y2="230" stroke="#c8a96e" stroke-width="1.6" opacity="0.7"/>
+          <!-- living / study vertical -->
+          <line x1="380" y1="30"  x2="380" y2="230" stroke="#c8a96e" stroke-width="1.6" opacity="0.7"/>
+          <!-- kitchen / dining vertical -->
+          <line x1="380" y1="230" x2="380" y2="360" stroke="#c8a96e" stroke-width="1.6" opacity="0.7"/>
+          <!-- bathroom wall left wing -->
+          <line x1="30"  y1="230" x2="180" y2="230" stroke="#c8a96e" stroke-width="1.6" opacity="0.7"/>
+          <line x1="100" y1="230" x2="100" y2="420" stroke="#c8a96e" stroke-width="1.6" opacity="0.7"/>
+          <!-- utility / boiler room -->
+          <line x1="100" y1="320" x2="180" y2="320" stroke="#c8a96e" stroke-width="1.4" opacity="0.65"/>
+
+          <!-- ── WINDOWS ── -->
+          <!-- top wall -->
+          <line x1="55"  y1="30" x2="110" y2="30" stroke="#c8a96e" stroke-width="4.5" opacity="1"/>
+          <line x1="220" y1="30" x2="340" y2="30" stroke="#c8a96e" stroke-width="4.5" opacity="1"/>
+          <line x1="410" y1="30" x2="480" y2="30" stroke="#c8a96e" stroke-width="4.5" opacity="1"/>
+          <line x1="560" y1="30" x2="640" y2="30" stroke="#c8a96e" stroke-width="4.5" opacity="1"/>
+          <!-- right wall (main wing) -->
+          <line x1="660" y1="60"  x2="660" y2="150" stroke="#c8a96e" stroke-width="4.5" opacity="1"/>
+          <line x1="660" y1="200" x2="660" y2="310" stroke="#c8a96e" stroke-width="4.5" opacity="1"/>
+          <!-- left wall -->
+          <line x1="30" y1="70"  x2="30" y2="170" stroke="#c8a96e" stroke-width="4.5" opacity="1"/>
+          <!-- bottom wall (left of L) -->
+          <line x1="55"  y1="420" x2="80"  y2="420" stroke="#c8a96e" stroke-width="4.5" opacity="1"/>
+          <line x1="320" y1="420" x2="420" y2="420" stroke="#c8a96e" stroke-width="4.5" opacity="1"/>
+          <!-- bottom wall (right of L) -->
+          <line x1="500" y1="360" x2="500" y2="360" stroke="#c8a96e" stroke-width="4.5" opacity="1"/>
+          <!-- garage windows -->
+          <line x1="620" y1="120" x2="620" y2="200" stroke="#c8a96e" stroke-width="4.5" opacity="0.8"/>
+
+          <!-- ── DOORS ── -->
+          <!-- main entrance -->
+          <line x1="160" y1="420" x2="210" y2="420" stroke="#0e0e0e" stroke-width="5"/>
+          <path d="M 160 420 A 50 50 0 0 0 160 370" fill="none" stroke="#c8a96e" stroke-width="1" opacity="0.75"/>
+          <line x1="160" y1="370" x2="160" y2="420" stroke="#c8a96e" stroke-width="1" opacity="0.75"/>
+
+          <!-- hall → living -->
+          <line x1="180" y1="90" x2="180" y2="130" stroke="#0e0e0e" stroke-width="4"/>
+          <path d="M 180 90 A 40 40 0 0 1 220 90" fill="none" stroke="#c8a96e" stroke-width="0.9" opacity="0.7"/>
+          <line x1="220" y1="90" x2="180" y2="90" stroke="#c8a96e" stroke-width="0.9" opacity="0.7"/>
+
+          <!-- living → study -->
+          <line x1="380" y1="90" x2="380" y2="126" stroke="#0e0e0e" stroke-width="4"/>
+          <path d="M 380 90 A 36 36 0 0 0 416 90" fill="none" stroke="#c8a96e" stroke-width="0.9" opacity="0.7"/>
+          <line x1="416" y1="90" x2="380" y2="90" stroke="#c8a96e" stroke-width="0.9" opacity="0.7"/>
+
+          <!-- kitchen door -->
+          <line x1="260" y1="230" x2="300" y2="230" stroke="#0e0e0e" stroke-width="4"/>
+          <path d="M 260 230 A 36 36 0 0 1 260 266" fill="none" stroke="#c8a96e" stroke-width="0.9" opacity="0.7"/>
+          <line x1="260" y1="266" x2="260" y2="230" stroke="#c8a96e" stroke-width="0.9" opacity="0.7"/>
+
+          <!-- bathroom door -->
+          <line x1="100" y1="256" x2="100" y2="288" stroke="#0e0e0e" stroke-width="4"/>
+          <path d="M 100 256 A 30 30 0 0 0 70 256" fill="none" stroke="#c8a96e" stroke-width="0.9" opacity="0.7"/>
+          <line x1="70" y1="256" x2="100" y2="256" stroke="#c8a96e" stroke-width="0.9" opacity="0.7"/>
+
+          <!-- garage → hall door -->
+          <line x1="500" y1="170" x2="500" y2="204" stroke="#0e0e0e" stroke-width="4"/>
+          <path d="M 500 170 A 34 34 0 0 1 534 170" fill="none" stroke="#c8a96e" stroke-width="0.9" opacity="0.65"/>
+          <line x1="534" y1="170" x2="500" y2="170" stroke="#c8a96e" stroke-width="0.9" opacity="0.65"/>
+
+          <!-- ── FIXTURES ── -->
+          <!-- staircase (hall) -->
+          <rect x="34" y="34" width="50" height="140" fill="none" stroke="#c8a96e" stroke-width="0.8" opacity="0.5"/>
+          <line x1="34" y1="52"  x2="84" y2="52"  stroke="#c8a96e" stroke-width="0.5" opacity="0.3"/>
+          <line x1="34" y1="70"  x2="84" y2="70"  stroke="#c8a96e" stroke-width="0.5" opacity="0.3"/>
+          <line x1="34" y1="88"  x2="84" y2="88"  stroke="#c8a96e" stroke-width="0.5" opacity="0.3"/>
+          <line x1="34" y1="106" x2="84" y2="106" stroke="#c8a96e" stroke-width="0.5" opacity="0.3"/>
+          <line x1="34" y1="124" x2="84" y2="124" stroke="#c8a96e" stroke-width="0.5" opacity="0.3"/>
+          <line x1="34" y1="142" x2="84" y2="142" stroke="#c8a96e" stroke-width="0.5" opacity="0.3"/>
+          <line x1="34" y1="160" x2="84" y2="160" stroke="#c8a96e" stroke-width="0.5" opacity="0.3"/>
+          <line x1="59" y1="168" x2="59" y2="40"  stroke="#c8a96e" stroke-width="0.7" opacity="0.45"/>
+          <polygon points="59,34 54,46 64,46" fill="#c8a96e" opacity="0.4"/>
+
+          <!-- bathroom fixtures -->
+          <rect x="36" y="258" width="30" height="22" rx="4" fill="none" stroke="#c8a96e" stroke-width="0.7" opacity="0.45"/>
+          <ellipse cx="51" cy="265" rx="9" ry="7" fill="none" stroke="#c8a96e" stroke-width="0.6" opacity="0.35"/>
+          <rect x="68" y="258" width="18" height="16" rx="3" fill="none" stroke="#c8a96e" stroke-width="0.7" opacity="0.4"/>
+          <!-- bath tub -->
+          <rect x="36" y="290" width="60" height="26" rx="5" fill="none" stroke="#c8a96e" stroke-width="0.7" opacity="0.4"/>
+          <ellipse cx="66" cy="303" rx="20" ry="9" fill="none" stroke="#c8a96e" stroke-width="0.5" opacity="0.3"/>
+
+          <!-- kitchen counter & appliances -->
+          <rect x="184" y="236" width="90" height="14" fill="none" stroke="#c8a96e" stroke-width="0.7" opacity="0.4"/>
+          <rect x="184" y="250" width="36" height="36" fill="none" stroke="#c8a96e" stroke-width="0.7" opacity="0.4"/>
+          <circle cx="196" cy="260" r="5" fill="none" stroke="#c8a96e" stroke-width="0.6" opacity="0.38"/>
+          <circle cx="210" cy="260" r="5" fill="none" stroke="#c8a96e" stroke-width="0.6" opacity="0.38"/>
+          <circle cx="196" cy="276" r="5" fill="none" stroke="#c8a96e" stroke-width="0.6" opacity="0.38"/>
+          <circle cx="210" cy="276" r="5" fill="none" stroke="#c8a96e" stroke-width="0.6" opacity="0.38"/>
+          <!-- sink -->
+          <rect x="224" y="250" width="22" height="20" rx="2" fill="none" stroke="#c8a96e" stroke-width="0.7" opacity="0.4"/>
+
+          <!-- fireplace in living -->
+          <rect x="360" y="34" width="36" height="24" fill="none" stroke="#c8a96e" stroke-width="0.8" opacity="0.5"/>
+          <rect x="364" y="38" width="28" height="16" fill="none" stroke="#c8a96e" stroke-width="0.5" opacity="0.35"/>
+
+          <!-- ── ROOM LABELS ── -->
+          <text x="140" y="128" font-family="Courier New" font-size="9"   fill="#c8a96e" opacity="0.65" text-anchor="middle">ПРИХОЖАЯ</text>
+          <text x="140" y="140" font-family="Courier New" font-size="7.5" fill="#c8a96e" opacity="0.4"  text-anchor="middle">14.2 м²</text>
+
+          <text x="66"  y="282" font-family="Courier New" font-size="8"   fill="#c8a96e" opacity="0.6"  text-anchor="middle">С/У</text>
+          <text x="140" y="360" font-family="Courier New" font-size="9"   fill="#c8a96e" opacity="0.65" text-anchor="middle">КОТ.</text>
+
+          <text x="280" y="130" font-family="Courier New" font-size="10"  fill="#c8a96e" opacity="0.7"  text-anchor="middle">ГОСТИНАЯ</text>
+          <text x="280" y="144" font-family="Courier New" font-size="7.5" fill="#c8a96e" opacity="0.4"  text-anchor="middle">52.0 м²</text>
+
+          <text x="520" y="130" font-family="Courier New" font-size="10"  fill="#c8a96e" opacity="0.7"  text-anchor="middle">МАСТЕР</text>
+          <text x="520" y="143" font-family="Courier New" font-size="10"  fill="#c8a96e" opacity="0.7"  text-anchor="middle">СПАЛЬНЯ</text>
+          <text x="520" y="156" font-family="Courier New" font-size="7.5" fill="#c8a96e" opacity="0.4"  text-anchor="middle">36.4 м²</text>
+
+          <text x="280" y="296" font-family="Courier New" font-size="10"  fill="#c8a96e" opacity="0.7"  text-anchor="middle">КУХНЯ /</text>
+          <text x="280" y="310" font-family="Courier New" font-size="10"  fill="#c8a96e" opacity="0.7"  text-anchor="middle">СТОЛОВАЯ</text>
+          <text x="280" y="323" font-family="Courier New" font-size="7.5" fill="#c8a96e" opacity="0.4"  text-anchor="middle">42.0 м²</text>
+
+          <text x="440" y="296" font-family="Courier New" font-size="10"  fill="#c8a96e" opacity="0.7"  text-anchor="middle">КАБИНЕТ</text>
+          <text x="440" y="323" font-family="Courier New" font-size="7.5" fill="#c8a96e" opacity="0.4"  text-anchor="middle">24.5 м²</text>
+
+          <text x="557" y="205" font-family="Courier New" font-size="9"   fill="#c8a96e" opacity="0.6"  text-anchor="middle">ГАРАЖ</text>
+          <text x="557" y="218" font-family="Courier New" font-size="7.5" fill="#c8a96e" opacity="0.38" text-anchor="middle">2 × авто</text>
+
+          <text x="188" y="440" font-family="Courier New" font-size="8.5" fill="#c8a96e" opacity="0.5"  text-anchor="middle">ТЕРРАСА  18 м²</text>
+
+          <!-- ── DIMENSION LINES ── -->
+          <line x1="30"  y1="16" x2="660" y2="16" stroke="#c8a96e" stroke-width="0.5" opacity="0.35"/>
+          <line x1="30"  y1="12" x2="30"  y2="20" stroke="#c8a96e" stroke-width="0.5" opacity="0.35"/>
+          <line x1="660" y1="12" x2="660" y2="20" stroke="#c8a96e" stroke-width="0.5" opacity="0.35"/>
+          <text x="345" y="13" font-family="Courier New" font-size="7.5" fill="#c8a96e" opacity="0.38" text-anchor="middle">20 400</text>
+
+          <line x1="676" y1="30"  x2="676" y2="420" stroke="#c8a96e" stroke-width="0.5" opacity="0.32"/>
+          <line x1="672" y1="30"  x2="680" y2="30"  stroke="#c8a96e" stroke-width="0.5" opacity="0.32"/>
+          <line x1="672" y1="420" x2="680" y2="420" stroke="#c8a96e" stroke-width="0.5" opacity="0.32"/>
+          <text x="688" y="228" font-family="Courier New" font-size="7.5" fill="#c8a96e" opacity="0.32" text-anchor="middle" transform="rotate(90 688 228)">12 800</text>
+
+          <!-- legend -->
+          <text x="660" y="452" font-family="Courier New" font-size="7" fill="#c8a96e" opacity="0.28" text-anchor="end">ПЛАН 1-ГО ЭТАЖА  М 1:100  /  280 М²</text>
+        </svg>
+      </div>
+    </div>
+
+    <!-- horizontal photo strip -->
+    <div class="photo-strip">
+      <div class="strip-track">
+        <img class="strip-photo" src="content/2026-03-05 02.57.59.jpg" alt="" />
+        <img class="strip-photo" src="content/2026-03-05 02.58.04.jpg" alt="" />
+        <img class="strip-photo" src="content/2026-03-05 02.58.09.jpg" alt="" />
+        <img class="strip-photo" src="content/2026-03-05 02.58.13.jpg" alt="" />
+        <img class="strip-photo" src="content/2026-03-05 02.58.18.jpg" alt="" />
+      </div>
+    </div>
+  </section>
+
+  <!-- PHOTOGRAPHS -->
+  <section class="section" id="photos">
+    <div class="section-header">
+      <h2 class="section-title">Фотографии</h2>
+      <div class="section-line"></div>
+    </div>
+    <div class="photo-grid">
+      <div class="photo-card reveal pc-tall"  data-section="photos" data-idx="0"></div>
+      <div class="photo-card reveal pc-wide"  data-section="photos" data-idx="1"></div>
+      <div class="photo-card reveal"          data-section="photos" data-idx="2"></div>
+      <div class="photo-card reveal pc-wide"  data-section="photos" data-idx="3"></div>
+      <div class="photo-card reveal pc-tall"  data-section="photos" data-idx="4"></div>
+      <div class="photo-card reveal"          data-section="photos" data-idx="5"></div>
+      <div class="photo-card reveal"          data-section="photos" data-idx="6"></div>
+      <div class="photo-card reveal pc-wide"  data-section="photos" data-idx="7"></div>
+      <div class="photo-card reveal"          data-section="photos" data-idx="8"></div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section class="section" id="projects">
+    <div class="section-header">
+      <h2 class="section-title">Проекты</h2>
+      <div class="section-line"></div>
+    </div>
+    <div class="projects-grid">
+      <div class="project-card reveal" data-project="1">
+        <div class="project-thumb"></div>
+        <div class="project-info">
+          <span class="project-label">Проект 01</span>
+          <p class="project-desc">Деревянный дом — 280 м²</p>
+        </div>
+      </div>
+      <div class="project-card reveal" data-project="2">
+        <div class="project-thumb"></div>
+        <div class="project-info">
+          <span class="project-label">Проект 02</span>
+          <p class="project-desc">Загородный коттедж — 420 м²</p>
+        </div>
+      </div>
+      <div class="project-card reveal" data-project="3">
+        <div class="project-thumb"></div>
+        <div class="project-info">
+          <span class="project-label">Проект 03</span>
+          <p class="project-desc">Баня и хозяйственные постройки</p>
+        </div>
+      </div>
+      <div class="project-card reveal" data-project="4">
+        <div class="project-thumb"></div>
+        <div class="project-info">
+          <span class="project-label">Проект 04</span>
+          <p class="project-desc">Дом из клееного бруса — 360 м²</p>
+        </div>
+      </div>
+      <div class="project-card reveal" data-project="5">
+        <div class="project-thumb"></div>
+        <div class="project-info">
+          <span class="project-label">Проект 05</span>
+          <p class="project-desc">Хонка — типовой проект</p>
+        </div>
+      </div>
+      <div class="project-card reveal" data-project="6">
+        <div class="project-thumb"></div>
+        <div class="project-info">
+          <span class="project-label">Проект 06</span>
+          <p class="project-desc">Индивидуальный проект — 510 м²</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACTS -->
+  <section class="section contacts" id="contacts">
+    <div class="section-header">
+      <h2 class="section-title">Контакты</h2>
+      <div class="section-line"></div>
+    </div>
+    <div class="contacts-body">
+      <div class="contact-row">
+        <span class="contact-key">Тел.</span>
+        <span class="contact-val">+7 921-308-90-30</span>
+      </div>
+      <div class="contact-row">
+        <span class="contact-key">Почта</span>
+        <span class="contact-val">ien999@yandex.ru</span>
+      </div>
+    </div>
+    <div class="footer-mark">Lavka Architektora © 2026</div>
+  </section>
+
+  <!-- LIGHTBOX -->
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <div class="lb-backdrop"></div>
+    <button class="lb-close" aria-label="Закрыть">&#x2715;</button>
+    <button class="lb-arrow lb-prev" aria-label="Назад">&#x2039;</button>
+    <button class="lb-arrow lb-next" aria-label="Вперёд">&#x203a;</button>
+    <div class="lb-stage">
+      <img class="lb-img" src="" alt="" />
+    </div>
+    <div class="lb-counter"><span class="lb-cur">1</span> / <span class="lb-total">1</span></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
